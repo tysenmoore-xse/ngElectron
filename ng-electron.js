@@ -23,22 +23,23 @@ angular.module('ngElectron', [])
   };
 
   //remote require
-  o.require         = require('remote').require;
+  o.remote          = require('electron').remote;
+  o.require         = o.remote.require;
 
   //Electron api
-  o.app             = o.require('app');
-  o.browserWindow   = o.require('browser-window');
-  o.clipboard       = o.require('clipboard');
-  o.dialog          = o.require('dialog');
-  o.menu            = o.require('menu');
-  o.menuItem        = o.require('menu-item');
-  o.nativeImage     = o.require('native-image');
-  o.powerMonitor    = o.require('power-monitor');
-  o.protocol        = o.require('protocol');
-  o.screen          = o.require('screen');
-  o.shell           = o.require('shell');
-  o.tray            = o.require('tray');
-  o.capturer        = require('electron').desktopCapturer;
+  o.app             = o.remote.app;
+  o.browserWindow   = o.remote.BrowserWindow;
+  o.clipboard       = o.remote.clipboard;
+  o.dialog          = o.remote.dialog;
+  o.menu            = o.remote.Menu;
+  o.menuItem        = o.remote.MenuItem;
+  o.nativeImage     = o.remote.nativeImage;
+  o.powerMonitor    = o.remote.powerMonitor;
+  o.protocol        = o.remote.protocol;
+  o.screen          = o.remote.screen;
+  o.shell           = o.remote.shell;
+  o.tray            = o.remote.Tray;
+  //o.capturer        = require('electron').desktopCapturer;
 
   //Node 11 (abridged) api
   o.buffer          = o.require('buffer');
